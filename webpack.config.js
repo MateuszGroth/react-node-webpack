@@ -10,8 +10,8 @@ module.exports = env => ({
   mode: "development",
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
+    path: path.resolve(__dirname, "public"),
+    filename: "bundle.js",
     chunkFilename: "[name].chunk.js"
   },
   module: {
@@ -92,13 +92,13 @@ module.exports = env => ({
     extensions: [".js", ".jsx"]
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      // to add the js script webpack created
-      template: "./src/index.html",
-      filename: "./index.html"
-    }),
+    // new HtmlWebPackPlugin({
+    //   // to add the js script webpack created
+    //   template: "./src/index.html",
+    //   filename: "./index.html"
+    // }),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
+      filename: "style/main.css"
     })
   ]
 });
